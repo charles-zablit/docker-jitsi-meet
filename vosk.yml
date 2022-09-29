@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+    # SIP gateway (audio)
+    vosk:
+        image: alphacep/kaldi-fr:latest
+        restart: ${RESTART_POLICY:-unless-stopped}
+        ports:
+            - '2700:2700'
+        networks:
+            meet.jitsi:
